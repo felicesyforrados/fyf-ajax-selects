@@ -92,6 +92,7 @@ def make_ajax_form(model,fieldlist,superclass=ModelForm,show_help_text=False,**k
         class Meta:
             pass
         setattr(Meta, 'model', model)
+        setattr(Meta, 'fields', "__all__")
 
     for model_fieldname,channel in fieldlist.iteritems():
         f = make_ajax_field(model,model_fieldname,channel,show_help_text)
